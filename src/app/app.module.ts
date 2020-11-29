@@ -8,11 +8,11 @@ import { MainNavComponent } from './components/main-nav/main-nav.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { AboutComponent } from './components/about/about.component';
 import { HomeComponent } from './components/home/home.component';
-import { NavComponent } from './components/nav/nav.component';
 import { MainComponent } from './pages/main/main.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PostsComponent } from './pages/posts/posts.component';
 import { PostFormComponent } from './components/post-form/post-form.component';
+import {FormsModule} from '@angular/forms';
 
 const AppRoutes: Routes =[
   { path: '', component: MainComponent},
@@ -30,7 +30,6 @@ const AppRoutes: Routes =[
     NotFoundComponent,
     AboutComponent,
     HomeComponent,
-    NavComponent,
     MainComponent,
     PostsComponent,
     PostFormComponent
@@ -38,7 +37,8 @@ const AppRoutes: Routes =[
   imports: [
     BrowserModule,
     RouterModule.forRoot(AppRoutes),
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

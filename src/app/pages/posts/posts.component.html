@@ -2,7 +2,7 @@
 <section>
   <div class="container">
     <p>posts works!</p>
-    <app-post-form></app-post-form>
+    <app-post-form (onAdd)="updatePost($event)"></app-post-form>
   </div>
 </section>
 <section>
@@ -15,12 +15,8 @@
 <section>
   <div class="container">
     <button (click)="backgroundToggle = !backgroundToggle">Toggle</button>
-    <div [ngStyle]="{
-  background: backgroundToggle ? 'yellow' : 'blue'
-}">squad</div>
-    <p [ngClass]="{
-  blue: backgroundToggle === true,
-  yellow: !backgroundToggle}">tes dsat</p>
+    <div [ngStyle]="{background: backgroundToggle ? 'yellow' : 'blue'}">squad</div>
+    <p [ngClass]="{blue: backgroundToggle === true,yellow: !backgroundToggle}">tes dsat</p>
   </div>
 </section>
 

@@ -1,5 +1,5 @@
-<nav>
-  <a routerLink="">Главная</a>
-  <a routerLink="/myPosts">Посты</a>
+<nav class="nav">
+  <a routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">Главная</a>
+  <a routerLink="/myPosts" routerLinkActive="active-link">Посты</a>
 </nav>
 <router-outlet></router-outlet>

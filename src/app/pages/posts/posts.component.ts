@@ -11,6 +11,7 @@ export interface Post {
   templateUrl: './posts.component.html',
   styleUrls: ['./posts.component.css']
 })
+
 export class PostsComponent implements OnInit {
   backgroundToggle = false;
 
@@ -35,4 +36,7 @@ export class PostsComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  updatePost(post: Post) {
+    this.posts.unshift(post);
+  }
 }

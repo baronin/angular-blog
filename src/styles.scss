@@ -1,4 +1,10 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import "src/app/components/header/header.component";
+
+@font-face {
+  font-family: HelveticaNeue;
+  src: url("/assets/fonts/HelveticaNeue.ttf") format("ttf");
+  font-weight: 300;
+}
 
 * {
   box-sizing: border-box;
@@ -7,17 +13,26 @@
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font: 12px/18px HelveticaNeue;
   font-size: 1rem;
   line-height: 1.6;
   background-color: #fff;
   color: #333;
 }
 
+section {
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
+ol {
+  margin-left: 20px;
+}
 .container {
   max-width: 1000px;
   margin: 0 auto;
-  padding-top: 1rem;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 a {
@@ -82,9 +97,15 @@ hr {
 .red {
   color: red;
 }
+.yellow {
+  color: yellow;
+}
 
 
 .blue {
   color: blue;
 }
 
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
