@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {Routes, RouterModule} from '@angular/router';
+// import {Routes, RouterModule} from '@angular/router';
 import { AppComponent } from './app.component';
 import { PostComponent } from './components/post/post.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -13,14 +13,17 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PostsComponent } from './pages/posts/posts.component';
 import { PostFormComponent } from './components/post-form/post-form.component';
 import {FormsModule} from '@angular/forms';
+import { LoginComponent } from './components/login/login.component';
+import { ROUTING } from './app.routing';
+import { HttpClientModule } from '@angular/common/http';
 
-const AppRoutes: Routes =[
-  { path: '', component: MainComponent},
-  { path: 'myPosts', component: PostsComponent},
-  { path: '**', component: NotFoundComponent },
-  // { path: '**', redirectTo: '/' },
-  // { path: 'contact', redirectTo: '/about', pathMatch:'full'},
-];
+// const AppRoutes: Routes =[
+//   { path: '', component: MainComponent},
+//   { path: 'myPosts', component: PostsComponent},
+//   { path: '**', component: NotFoundComponent },
+//   // { path: '**', redirectTo: '/' },
+//   // { path: 'contact', redirectTo: '/about', pathMatch:'full'},
+// ];
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,13 +35,16 @@ const AppRoutes: Routes =[
     HomeComponent,
     MainComponent,
     PostsComponent,
-    PostFormComponent
+    PostFormComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(AppRoutes),
+    ROUTING,
+    // RouterModule.forRoot(AppRoutes),
     BrowserAnimationsModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
