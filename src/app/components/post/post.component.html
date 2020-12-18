@@ -1,8 +1,12 @@
-<li>
+<div id="{{myPost.id}}" class="post-content">
+  <ng-content></ng-content>
   <h2>{{ myPost.title}}</h2>
-  <p>{{ myPost.text}}
-  </p>
-</li>
+  <p>{{ myPost.text}}</p>
+  <div class="post-icon-wrap">
+    <button class="button button--secondary">Change</button>
+    <button class="button button--danger" (click)="remove(myPost.id)">Remove</button>
+  </div>
+</div>
 
 <!-- <input type="text" placeholder="input data" (input)="onInput($event)"/> -->
 <!--<input type="text" placeholder="input data" [(ngModel)]="inputValue"/>-->
