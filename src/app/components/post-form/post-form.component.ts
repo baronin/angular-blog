@@ -1,17 +1,16 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component, ElementRef, EventEmitter, OnInit, Output, ViewChild} from '@angular/core';
 import {Post} from '../../pages/posts/posts.component';
 
 @Component({
   selector: 'app-post-form',
   templateUrl: './post-form.component.html',
-  styleUrls: ['./post-form.component.css']
+  styleUrls: ['./post-form.component.scss']
 })
 
 export class PostFormComponent implements OnInit {
 
   title = '';
   text = '';
-
 
   constructor() {
   }
@@ -20,7 +19,7 @@ export class PostFormComponent implements OnInit {
   }
 
   @Output() onAdd: EventEmitter<Post> = new EventEmitter<Post>();
-
+  @ViewChild('titleInput') inputRef: ElementRef;
   addPost(): any {
     if (this.title.trim() && this.text. trim()) {
       const post: Post = {
@@ -29,6 +28,7 @@ export class PostFormComponent implements OnInit {
       };
       this.onAdd.emit(post);
       this.title = this.text = '';
+      this.inputRef.nativeElement.focus();
     }
   }
 }
