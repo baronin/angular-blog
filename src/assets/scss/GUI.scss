@@ -1,0 +1,14 @@
+.title-main {
+  position: relative;
+  padding: 0 0 20px;
+  font-size: 14px;
+  &:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAp8AAAAGCAYAAACFHvWqAAAAd0lEQVRoge3ZMQoCQRAEwA580P5yH+NjZsEHjckphoIHJ0t1VjBBhw2T7p59pKr6M8zMzMzMZzp9jM+rizAzMzPz/k53z38owszMzMz7O1U1vzlkZmZmZv7V77f71UWYmZmZeX/fkjyS3NdaGWPkFWZmZmbms/0E+oBZ2+Qvv+cAAAAASUVORK5CYII=) repeat-x;
+    height: 6px;
+    width: 100%;
+  }
+}
