@@ -6,7 +6,7 @@ import { PostComponent } from './components/post/post.component';
 import { HeaderComponent } from './components/header/header.component';
 import { MainNavComponent } from './components/main-nav/main-nav.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
-import { AboutComponent } from './components/about/about.component';
+import { AboutComponent } from './pages/about/about.component';
 import { HomeComponent } from './components/home/home.component';
 import { MainComponent } from './pages/main/main.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -14,8 +14,9 @@ import { PostsComponent } from './pages/posts/posts.component';
 import { PostFormComponent } from './components/post-form/post-form.component';
 import {FormsModule} from '@angular/forms';
 import { LoginComponent } from './components/login/login.component';
-import { ROUTING } from './app.routing';
 import { HttpClientModule } from '@angular/common/http';
+import { ROUTING } from './app.routing';
+import { ButtonComponent } from './components/button/button.component';
 
 // const AppRoutes: Routes =[
 //   { path: '', component: MainComponent},
@@ -37,6 +38,7 @@ import { HttpClientModule } from '@angular/common/http';
     PostsComponent,
     PostFormComponent,
     LoginComponent,
+    ButtonComponent,
   ],
   imports: [
     BrowserModule,
