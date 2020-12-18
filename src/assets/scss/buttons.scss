@@ -1,0 +1,37 @@
+.button {
+  display: inline-block;
+  // margin: 10px;
+  padding: 10px;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+
+  &--accept {
+    background: linear-gradient(#96b435, #739a27);
+  }
+
+  &--default {
+    background: linear-gradient(#d6d6d6, #b9babd);
+  }
+
+  &--primary {
+    background: linear-gradient(#7fb0f4, #5586e2);
+  }
+
+  &--warning {
+    background: linear-gradient(#f38a56, #de5d34);
+  }
+
+  &--info {
+    background: linear-gradient(#ee81ee, #d856d9);
+  }
+
+  &--danger {
+    background: linear-gradient(#f45959, #ee4545);
+  }
+
+  &--secondary {
+    background: linear-gradient(#77e2e8, #4dc6d0);
+  }
+}
