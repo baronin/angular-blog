@@ -6,6 +6,7 @@ import {MainComponent} from './pages/main/main.component';
 import {PostsComponent} from './pages/posts/posts.component';
 import {AboutComponent} from './pages/about/about.component';
 import {AngularComponent} from './pages/angular/angular.component';
+import {FormsComponent} from './pages/angular/forms/forms.component';
 
 export const AppRoutes: Routes = [
   { path: '', component: MainComponent },
@@ -13,6 +14,7 @@ export const AppRoutes: Routes = [
   { path: 'myPosts', component: PostsComponent },
   { path: 'about', component: AboutComponent },
   { path: 'angular', component: AngularComponent },
+  { path: 'angular/forms', component: FormsComponent },
 ];
 
 export const ROUTING: ModuleWithProviders<any> = RouterModule.forRoot(AppRoutes);
