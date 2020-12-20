@@ -2,6 +2,7 @@
   <ng-content></ng-content>
   <h2>{{ myPost.title}}</h2>
   <p>{{ myPost.text}}</p>
+  <i>{{ myPost.time | date : 'short'}}</i>
   <div class="post-icon-wrap">
     <button class="button button--secondary">Change</button>
     <button class="button button--danger" (click)="remove(myPost.id)">Remove</button>
