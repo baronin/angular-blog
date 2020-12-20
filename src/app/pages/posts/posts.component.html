@@ -3,13 +3,16 @@
   <div class="container">
     <h2>Create post</h2>
     <app-post-form (onAdd)="updatePost($event)"></app-post-form>
+    <hr>
+    <label for="search">Search post</label>
+    <input id="search" type="text" [(ngModel)]="search" class="form-post__input">
   </div>
 </section>
 <section class="section section__posts">
   <div class="container">
     <h2 class="posts__title">Posts list</h2>
     <ul class="posts-list">
-      <li *ngFor="let post of posts; let i = index" class="post-item">
+      <li *ngFor="let post of posts | filter:search; let i = index" class="post-item">
         <div #info>
           <app-post  [myPost]='post' class="post-item__border" (onRemove)="removePost($event)">
             {{i}}
@@ -23,20 +26,7 @@
     </ul>
   </div>
 </section>
-<section>
-  <div class="container">
-    <h4>Test work</h4>
-    <div [ngStyle]="{background: backgroundToggle ? '#effeb9' : '#4d8fcb'}">Background color</div>
-    <p [ngClass]="{blue: backgroundToggle === true, '#effeb9': !backgroundToggle}">Text color</p>
-    <p [class.blue]="!backgroundToggle" [class.red]="backgroundToggle">Lorem ipsum dolor sit amet.</p>
-    <button (click)="backgroundToggle = !backgroundToggle">Toggle color</button>
-    <hr>
-    <p *ngIf="toggle; else otherText">Lorem ipsum dolor sit amet, consectetur.</p>
-    <ng-template #otherText><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur, voluptatem?</p></ng-template>
-    <p *ngIf="toggle">Lorem ipsum dolor sit amet, consectetur.</p>
-    <button (click)="toggle = !toggle">More text</button>
-  </div>
-</section>
+
 
 
 
