@@ -17,6 +17,11 @@ import { LoginComponent } from './components/login/login.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ROUTING } from './app.routing';
 import { ButtonComponent } from './components/button/button.component';
+import { StyleDirective } from './directives/style.directive';
+import { AngularComponent } from './pages/angular/angular.component';
+import { IfNotDirective } from './directives/if-not.directive';
+import { MultPipe } from './pipes/mult.pipe';
+import { FilterPipe } from './pipes/filter.pipe';
 
 // const AppRoutes: Routes =[
 //   { path: '', component: MainComponent},
@@ -28,6 +33,7 @@ import { ButtonComponent } from './components/button/button.component';
 @NgModule({
   declarations: [
     AppComponent,
+    StyleDirective,
     PostComponent,
     HeaderComponent,
     MainNavComponent,
@@ -39,6 +45,10 @@ import { ButtonComponent } from './components/button/button.component';
     PostFormComponent,
     LoginComponent,
     ButtonComponent,
+    AngularComponent,
+    IfNotDirective,
+    MultPipe,
+    FilterPipe,
   ],
   imports: [
     BrowserModule,
