@@ -1,8 +1,11 @@
 .nav {
   a {
+    position: relative;
     color: #e8e8e8;
     font-size: 12px;
     padding: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
     border-radius: 3px;
     text-transform: capitalize;
     cursor: pointer;
@@ -10,6 +13,18 @@
     &:hover {
       background: #2f2f2f;
       box-shadow: 0 1px 0 0 hsla(0,0%,100%,.25), inset 0 1px 8px 0 rgba(0,0,0,.25);
+    }
+    &:after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: -10px;
+      transform: translateY(-50%);
+      display: inline-block;
+      width: 2px;
+      background: linear-gradient(90deg,#080808,#ffffff59);
+      opacity: .902;
+      height: 20px;
     }
   }
 }

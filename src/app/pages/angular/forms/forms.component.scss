@@ -1,0 +1,9 @@
+input {
+  border-radius: 5px;
+  &.ng-invalid.ng-touched {
+    border-color: #ee4545;
+  }
+  &.ng-valid.ng-touched {
+    border-color: #739a27;
+  }
+}
