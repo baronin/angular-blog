@@ -53,7 +53,7 @@
         <h2>Ваши навыки</h2>
         <button class="btn" type="button" (click)="addSkills()">Добавить умение</button>
         <div class="form-control"
-            *ngFor="let control of form.get('skills').controls;
+            *ngFor="let control of getControls();
             let i = index;">
           <label for="skills{{i + 1}}">Skill {{i}}</label>
           <input id="skills{{i + 1}}" type="text" [formControlName]="i">

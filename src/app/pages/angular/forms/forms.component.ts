@@ -46,6 +46,11 @@ export class FormsComponent implements OnInit {
 
     this.form.patchValue({address: {city}});
   }
+
+  getControls(): any {
+    return (this.form.get('skills') as FormArray).controls;
+  }
+
   addSkills(): any {
     const control = new FormControl('', Validators.required);
     (this.form.get('skills') as FormArray).push(control);
