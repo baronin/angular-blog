@@ -8,23 +8,25 @@ import {Post} from '../../pages/posts/posts.component';
 })
 
 export class PostFormComponent implements OnInit {
-
-  title = '';
-  text = '';
-
   constructor() {
   }
 
-  ngOnInit(): void {
-  }
+  title = '';
+  text = '';
+  time = new Date();
 
   @Output() onAdd: EventEmitter<Post> = new EventEmitter<Post>();
+
   @ViewChild('titleInput') inputRef: ElementRef;
+
+  ngOnInit(): void {
+  }
   addPost(): any {
     if (this.title.trim() && this.text. trim()) {
       const post: Post = {
         title: this.title,
         text: this.text,
+        time: this.time,
       };
       this.onAdd.emit(post);
       this.title = this.text = '';

@@ -15,12 +15,8 @@ export class PostComponent implements OnInit {
   @Output() onRemove = new EventEmitter<number>();
 
   @ContentChild('info', {static: true}) infoRef: ElementRef;
-  ngOnChanges(): any {
-    console.log('ngOnChange: ', this.infoRef);
-  }
 
   ngOnInit(): any {
-    console.log('ngOnInit: ', this.infoRef);
   }
 
   remove(idPost): any {

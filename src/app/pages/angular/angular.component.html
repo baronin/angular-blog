@@ -1,0 +1,72 @@
+<app-header></app-header>
+<section>
+  <div class="container">
+    <h1 class="title-main">Angular works!</h1>
+  </div>
+</section>
+<section>
+  <div class="container">
+    <h4>Conditions</h4>
+    <div [ngStyle]="{background: backgroundToggle ? '#effeb9' : '#4d8fcb'}">Background color</div>
+    <p [ngClass]="{blue: backgroundToggle === true, '#effeb9': !backgroundToggle}">Text color</p>
+    <p [class.blue]="!backgroundToggle" [class.red]="backgroundToggle">Lorem ipsum dolor sit amet.</p>
+    <button (click)="backgroundToggle = !backgroundToggle">Toggle color</button>
+    <hr>
+    <p *ngIf="toggle; else otherText">Lorem ipsum dolor sit amet, consectetur.</p>
+    <ng-template #otherText><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur, voluptatem?</p></ng-template>
+    <p *ngIf="toggle">Lorem ipsum dolor sit amet, consectetur.</p>
+    <button (click)="toggle = !toggle">More text</button>
+  </div>
+</section>
+<section>
+  <div class="container">
+    <h4>Directives</h4>
+    <p>В конструкторе принимаем <code>constructor(private el: ElementRef, r: Renderer2) &#123;
+      console.log('console: ', el.nativeElement);
+      }</code>
+      </p>
+    <p>nativeElement - можем поменять стили <code>nativeElement.style.bgc = 'red'</code></p>
+    <p><b>r: Renderer2 </b>- нужно узнать что это, но работает это так </p>
+    <p> <code>r.setStyle(this.el.nativeElement, 'color', 'blue');</code></p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis cumque exercitationem modi.</p>
+    <p>HostListener - эту директиву добавляем в коснтруктор и передаем событие</p>
+    <code>@HostListener('click', ['$event.target']) onClick(event: Event) &#123;
+      this.r.setStyle(this.el.nativeElement, 'color', 'gray');
+      };</code>
+    <p appStyle="yellow" fontWeight="bold" [dStyles]="{border: '1px solid blue', fontWeight: '100'}">Передача параметров из штмл</p>
+    <p appStyle="green" fontWeight="bold" [dStyles]="{border: '4px solid red', fontWeight: '600'}">Передача параметров из штмл</p>
+    <p>Если хотим передать логику JS
+      <code> &#60;p '&#91;арpStyle&#93;="blue"'>Передача параметров из штмл </code>
+    </p>
+    <h4>Посмотреть видео по hostPipe</h4>
+
+    <h3>Есть и структурные директивы - это те которые влияют на структуру тега типа *ngIf(for,switch)</h3>
+    <div>
+      <p *ngIf="isVisible">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est, ipsam.</p>
+      <ng-template [ngIf]="isVisibility">
+        <p>template</p>
+      </ng-template>
+    </div>
+
+    <h4>Директива ifNot</h4>
+    <p *appIfNot="!isVisibleIfNote">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur laudantium repudiandae voluptatem!</p>
+
+    <h4>Пайпы</h4>
+    <h5>числа</h5>
+    <p>{{ pi | number: '1.1-5'}}</p>
+    <p>{{ pi | number: '1.0-0'}} Округляем</p>
+    <h6>float</h6>
+    <p>{{float}}</p>
+    <p>{{float | currency}}</p>
+    <p>{{float | percent}}</p>
+    <h5>строки</h5>
+    <p>{{ str | uppercase }} | {{ str | titlecase }}| {{ str | slice:4:9 }}</p>
+    <h5>Объект с большой вложенностью</h5>
+    <pre>
+      {{obj | json}}
+    </pre>
+
+    <h3>Custom Pipes</h3>
+    {{ 5 | mult }}
+  </div>
+</section>
