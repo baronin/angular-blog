@@ -7,6 +7,7 @@ import {PostsComponent} from './pages/posts/posts.component';
 import {AboutComponent} from './pages/about/about.component';
 import {AngularComponent} from './pages/angular/angular.component';
 import {FormsComponent} from './pages/angular/forms/forms.component';
+import {WorkWithApiComponent} from './pages/angular/work-with-api/work-with-api.component';
 
 export const AppRoutes: Routes = [
   { path: '', component: MainComponent },
@@ -15,6 +16,7 @@ export const AppRoutes: Routes = [
   { path: 'about', component: AboutComponent },
   { path: 'angular', component: AngularComponent },
   { path: 'angular/forms', component: FormsComponent },
+  { path: 'angular/work-with-api', component: WorkWithApiComponent },
 ];
 
 export const ROUTING: ModuleWithProviders<any> = RouterModule.forRoot(AppRoutes);

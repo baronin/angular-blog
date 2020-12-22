@@ -1,0 +1,52 @@
+<app-header></app-header>
+<section>
+  <div class="container">
+    <h1 class="title-main">TODO works!</h1>
+    <div>
+      <div class="form-control">
+        <label for="todo"></label>
+        <input id="todo" type="text" [(ngModel)]="todoTitle">
+        <button class="btn" (click)="addTodo()" type="button">Добавить</button>
+        <button class="btn" (click)="uploadPost()" type="button">Загрузить</button>
+      </div>
+      <hr>
+      <p *ngIf="errorMessage; else todoBlock">{{errorMessage}}</p>
+      <ng-template #todoBlock>
+        <div *ngIf="!loading; else loadingBlock">
+          <table class="table">
+            <tbody>
+            <tr *ngFor="let todo of todos; let i = index;">
+              <td [class.completed]="todo?.completed"> userID: {{todo.userId}}</td>
+              <td [class.completed]="todo?.completed">
+                {{todo.title}}
+              </td>
+              <td>
+                <label for="{{i}}">
+                  Checked
+                  <input id="{{i}}" type="checkbox" checked="{{todo?.completed}}">
+                </label>
+              </td>
+              <td>
+                <button class="btn" type="button" (click)="removeTodo(todo.id)">Удалить</button>
+              </td>
+              <td>
+                <button
+                  class="btn"
+                  type="button"
+                  [disabled]="todo?.completed"
+                  (click)="completeTodo(todo.id)"
+                >Завершить</button>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+        <ng-template #loadingBlock>
+          <div class="loader" [class.skeleton-box]="loading">
+            <p>Loading...</p>
+          </div>
+        </ng-template>
+      </ng-template>
+    </div>
+  </div>
+</section>
