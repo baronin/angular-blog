@@ -35,6 +35,9 @@ import { FormsComponent } from './pages/angular/forms/forms.component';
 // routing
 // import {Routes, RouterModule} from '@angular/router';
 import { ROUTING } from './app.routing';
+import { WorkWithApiComponent } from './pages/angular/work-with-api/work-with-api.component';
+import { WorkRxjsComponent } from './pages/angular/work-rxjs/work-rxjs.component';
+import {NavPageComponent} from './components/nav-page/nav-page.component';
 
 // const AppRoutes: Routes =[
 //   { path: '', component: MainComponent},
@@ -63,6 +66,9 @@ import { ROUTING } from './app.routing';
     MultPipe,
     FilterPipe,
     FormsComponent,
+    WorkWithApiComponent,
+    WorkRxjsComponent,
+    NavPageComponent,
   ],
   imports: [
     BrowserModule,

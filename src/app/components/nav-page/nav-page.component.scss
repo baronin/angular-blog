@@ -1,0 +1,13 @@
+.nav-page {
+  a {
+    color: #6e6b6b;
+    padding: 0 16px;
+    border-right: 1px solid #000000;
+    &:hover {
+      color: #000000;
+    }
+    &:first-child {
+      padding-left: 0;
+    }
+  }
+}
